@@ -1,0 +1,85 @@
+.welcome-title {
+    text-align: center;
+    color: #34495E; /* Primary color for the heading */
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif; /* Use a clean font */
+}
+
+.profile-update-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #D1F2EB; /* Light secondary background */
+    min-height: 100vh; /* Full height */
+}
+
+form {
+    max-width: 600px;
+    width: 100%;
+    background: #ffffff; /* White background for form */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+form:hover {
+    transform: scale(1.02); /* Slight zoom effect on hover */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold; /* Bold labels */
+    color: #34495E; /* Primary color for labels */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #88d99b; /* Light green for borders */
+    border-radius: 5px;
+    transition: border-color 0.3s; /* Smooth transition for border */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="date"]:focus,
+select:focus {
+    border-color: #007bff; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+.error-message {
+    color: #d9534f; /* Red for error messages */
+    font-size: 0.9em;
+}
+
+.submit-button {
+    background-color: #88d99b; /* Light green for button */
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px; /* Larger font for buttons */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+}
+
+.submit-button:hover {
+    background-color: #66b76b; /* Darker green on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}

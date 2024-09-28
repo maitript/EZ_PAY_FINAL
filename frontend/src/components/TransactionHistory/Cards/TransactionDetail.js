@@ -124,7 +124,7 @@ const TransactionDetail = () => {
         )}`}
       >
         {/* Apply status-based styling to the transaction details container */}
-        <Header />
+        //<Header />
         <div
           className={`transaction-details-container ${getStatusClass(
             transaction.status

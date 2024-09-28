@@ -11,7 +11,7 @@ const LoginError = () => {
 
   return (
     <>
-      <Header />
+      //<Header />
       <div className="login-error-container">
         <div className="login-error">
           <svg

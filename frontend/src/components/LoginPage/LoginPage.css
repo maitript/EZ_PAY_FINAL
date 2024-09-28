@@ -1,0 +1,101 @@
+body {
+  background-color: #D1F2EB; /* Light secondary background */
+  font-family: 'Arial', sans-serif;
+  margin: 0; /* Remove default margin */
+}
+
+.welcome-title {
+  text-align: center;
+  color: #66b76b; /* Faded red color */
+  margin: 40px 0;
+  font-size: 2.5em;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  transition: transform 0.3s ease; /* Smooth transition for title */
+}
+
+.form-container {
+  display: flex; /* Use flexbox to center the form */
+  justify-content: center; /* Center horizontally */
+  align-items: flex-start; /* Align items to the top */
+  height: calc(100vh - 60px); /* Adjust height to account for navbar */
+  padding-top: 10px; /* Reduced top padding */
+}
+
+.login-info {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* Stretch to fill the width */
+  background-color: #ffffff; /* White background for the form */
+  padding: 20px; /* Set equal padding on all sides */
+  border-radius: 15px; /* Slightly more rounded corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Enhanced shadow for depth */
+  width: 100%;
+  max-width: 600px; /* Increased max width for larger screens */
+}
+
+.form-group {
+  margin-bottom: 20px; /* Increased spacing between form groups */
+  width: 100%; /* Make sure form group takes full width */
+  display: flex; /* Use flex to center contents */
+  flex-direction: column; /* Stack label and input vertically */
+}
+
+.login-info-label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 15px; /* Slightly larger label font */
+  font-weight: bold;
+  color: #34495E; /* Primary color for better readability */
+}
+
+.login-info-control {
+  width: 100%; /* Ensure the input takes full width */
+  padding: 14px;
+  font-size: 15px;
+  border: 2px solid #88d99b; /* Light green for borders */
+  border-radius: 8px; /* More rounded input corners */
+  transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition for border and shadow */
+}
+
+.login-info-control:focus {
+  border-color: #007bff; /* Focus border color */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Subtle shadow on focus */
+  outline: none; /* Remove default outline */
+}
+
+.error-message {
+  color: #d9534f; /* Red for error messages */
+  font-size: 0.9em;
+  text-align: center;
+  margin-top: 10px; /* Margin for better spacing */
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: space-between; /* Space between buttons */
+  width: 100%; /* Full width for buttons container */
+}
+
+.form-button {
+  flex: 1; /* Buttons take equal space */
+  padding: 10px; /* Reduced padding */
+  font-size: 14px; /* Decreased font size */
+  background-color: #88d99b; /* Light green for buttons */
+  color: white;
+  border: none;
+  border-radius: 5px; /* Slightly smaller border-radius */
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+  margin: 0 5px; /* Margin for spacing between buttons */
+  margin-top: 20px;
+}
+
+.form-button:hover {
+  background-color: #66b76b; /* Darker green on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+.form-button:active {
+  transform: translateY(1px); /* Slight push down on click */
+}

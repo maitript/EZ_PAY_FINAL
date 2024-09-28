@@ -1,121 +1,120 @@
-import React, { useEffect } from 'react';
-import ReactDOM from 'react-dom/client';
-import { createBrowserRouter, RouterProvider, useLocation, useNavigate } from 'react-router-dom';
+import './App.css';
+import Navbar from './components/Navbar/Navbar';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './components/Home/Home';
+import Register from './components/Register/Register';
+import LoginPage from './components/LoginPage/LoginPage';
+import InitialProfileUpdatePage from './components/InitialProfileUpdatePage/InitialProfileUpdatePage';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import ViewProfile from './components/ViewProfile/ViewProfile';
+import PasswordRecovery from './components/PasswordRecovery/PasswordRecovery';
+import PasswordReset from './components/PasswordReset/PasswordReset';
+import UpdateProfile from './components/UpdateProfile/UpdateProfile';
+import Dashboard from './components/Dashboard/Dashboard'; //-> Tried the approach to embed dasbaord in the profile home
 import ActivateBankAccount from './components/ActivateBankAccount/ActivateBankAccount';
 import UpiPayment from './components/UpiPayment/UpiPayment';
 import BankTransaction from './components/BankTransaction/BankTransaction';
 import BankTransactionResult from './components/BankTransaction/BankTransactionResult';
-import  PaymentResult from './components/UpiPayment/PaymentResult';
+import PaymentResult from './components/UpiPayment/PaymentResult';
 import CheckUserBalance from './components/UpiPayment/CheckUserBalance';
-import Dashboard from './components/Dashboard/Dashboard';
-import Footer from './components/Footer/Footer';
 import TransactionDetail from './components/TransactionHistory/Cards/TransactionDetail';
 import LoginError from './components/TransactionHistory/LoginError/LoginError';
 import TransactionDashboard from './components/TransactionHistory/Dashboard/TransactionDashboard';
 
+/*
+@Author: Sagar Kumar
+*/
 
-// npm i react-router-dom chart.js html2canvas react-icons react-calendar react-chartjs-2
+function App() {
+  return (
+    <>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<LoginPage />} />
 
-/*@Author: Meghna Bhat
-@Date:22nd September 2024 */
+          {/* Password Recovery and Reset Routes */}
+          <Route path="/password/forgot" element={<PasswordRecovery />} />
+          <Route path="/password/reset" element={<PasswordReset />} />
 
+          {/* Protected Route for Profile Home rendering Dashboard */}
+          <Route path="/profileHome" element={
+            <PrivateRoute>
+              <Dashboard />
+            </PrivateRoute>
+          } />
 
-// Different navigation paths for the application
-const router = createBrowserRouter([
-    {
-        path: '/',
-        element: <Dashboard/>, // Use the Home component here
-    },
-    {
-        path: '/activate-account',
-        element: <ActivateBankAccount/>,
-    },
-    {
-        path: '/upi-payment',
-        element: <UpiPayment/>,
-    },
-    {
-        path: '/payment-result',
-        element: <PaymentResult/>,
-    },
-    {
-        path: '/check-balance',
-        element: <CheckUserBalance />,
-    },
+          <Route path="/initial-profile-update" element={
+            <PrivateRoute>
+              <InitialProfileUpdatePage />
+            </PrivateRoute>
+          } />
 
-    {
-        path: '/bank-transaction',
-        element: <BankTransaction />,
-    },
-    {
-        path: '/bank-transaction-result',
-        element: <BankTransactionResult />,
-    },
-    {
-        path: '/footer',
-        element: <Footer/>,
-    },
-    {
-        path: "/transactionhistory",
-        element: <TransactionDashboard />
-    },
-    {
-        path:"/transaction/:id",
-        element: <TransactionDetail />
-    },  
-    { 
-        path:"/LoginError",
-        element: <LoginError /> 
-    }
-]);
+          <Route path="/view-profile" element={
+            <PrivateRoute>
+              <ViewProfile />
+            </PrivateRoute>
+          } />
 
-const TransactionConfirmation = () => {
-    const location = useLocation();
-    const navigate = useNavigate();
+          {/* Update Profile Route */}
+          <Route path="/update-profile" element={
+            <PrivateRoute>
+              <UpdateProfile />
+            </PrivateRoute>
+          } />
 
-    useEffect(() => {
-        const transactionStatus = sessionStorage.getItem('transactionStatus');
-        const paymentId = sessionStorage.getItem('paymentId');
-        const reason = sessionStorage.getItem('reason');
-        const receiverUpiId = sessionStorage.getItem('receiverUpiId');
-        const amount = sessionStorage.getItem('amount');
-        const paymentStatus = sessionStorage.getItem('paymentStatus');
-        const senderUpiId = sessionStorage.getItem('senderUpiId');
-
-        if (transactionStatus === 'completed' && location.pathname !== '/payment-result') {
-            const confirmDetails = window.confirm("Your transaction is completed. Do you want to see the details?");
-            if (confirmDetails) {
-                navigate('/payment-result', {
-                    state: {
-                        receiverUpiId,
-                        amount,
-                        paymentStatus,
-                        reason,
-                        senderUpiId,
-                        paymentId
-                    }
-                });
-            }
-            // Clear session storage values
-            sessionStorage.removeItem('transactionStatus');
-            sessionStorage.removeItem('paymentId');
-            sessionStorage.removeItem('reason');
-            sessionStorage.removeItem('receiverUpiId');
-            sessionStorage.removeItem('amount');
-            sessionStorage.removeItem('paymentStatus');
-            sessionStorage.removeItem('senderUpiId');
-        }
-    }, [location, navigate]);
-
-    return null; // This component doesn't render anything
-};
-
-const App = () => {
-    return (
-        <RouterProvider router={router}>
-            <TransactionConfirmation /> {/* Include TransactionConfirmation here */}
-        </RouterProvider>
-    );
-};
+          {/* Additional Protected Routes */}
+          <Route path="/activate-account" element={
+            <PrivateRoute>
+              <ActivateBankAccount />
+            </PrivateRoute>
+          } />
+          <Route path="/upi-payment" element={
+            <PrivateRoute>
+              <UpiPayment />
+            </PrivateRoute>
+          } />
+          <Route path="/payment-result" element={
+            <PrivateRoute>
+              <PaymentResult />
+            </PrivateRoute>
+          } />
+          <Route path="/check-balance" element={
+            <PrivateRoute>
+              <CheckUserBalance />
+            </PrivateRoute>
+          } />
+          <Route path="/bank-transaction" element={
+            <PrivateRoute>
+              <BankTransaction />
+            </PrivateRoute>
+          } />
+          <Route path="/bank-transaction-result" element={
+            <PrivateRoute>
+              <BankTransactionResult />
+            </PrivateRoute>
+          } />
+          <Route path="/transactionhistory" element={
+            <PrivateRoute>
+              <TransactionDashboard />
+            </PrivateRoute>
+          } />
+          <Route path="/transaction/:id" element={
+            <PrivateRoute>
+              <TransactionDetail />
+            </PrivateRoute>
+          } />
+          <Route path="/LoginError" element={
+            <PrivateRoute>
+              <LoginError />
+            </PrivateRoute>
+          } />
+        </Routes>
+      </Router>
+    </>
+  );
+}
 
 export default App;

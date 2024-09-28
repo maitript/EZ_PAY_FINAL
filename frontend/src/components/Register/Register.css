@@ -1,0 +1,61 @@
+.user-registration {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 8px;
+  /* background-color: ; Light secondary background */
+}
+
+.welcome-title{
+  color:#66b76b;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  background-color: #D1F2EB; /* Slightly darker color */
+  padding: 15px; /* Add some padding */
+  border-radius: 8px; /* Rounded corners */
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #34495E; /* Primary color for labels */
+}
+
+.form-input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s; /* Smooth border color transition */
+}
+
+.form-input.error {
+  border-color: #e74c3c; /* Error color for input */
+}
+
+.error-message {
+  color: #e74c3c; /* Error message color */
+  margin-top: 5px;
+}
+
+.register-form .submit-button {
+  padding: 10px 20px;
+  background-color: #88d99b; /* Light green for submit button */
+  color: #fff; /* White text */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+.register-form .submit-button:hover {
+  background-color: #66b76b; /* Darker green on hover */
+}

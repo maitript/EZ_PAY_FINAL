@@ -11,7 +11,7 @@ import transactionhistory from '../../assets/transactionhistory.jpg';
 import activateBank from '../../assets/ActivateBank.png';
 
 import BarGraphComponent from './TransactionBarChart';
-import Header from '../Header/Header';
+//import Header from '../Header/Header'; //-> Changed to my header
 import Footer from '../Footer/Footer';
 import { Link } from 'react-router-dom';
 
@@ -57,7 +57,7 @@ const servicesData = [
     const [date, setDate] = useState(new Date()); // State to track selected date for calander
   
     return (<>
-    <Header title="DashBoard"/>
+    {/* <Header title="DashBoard"/> */}
 
 <div className="main-container">
         

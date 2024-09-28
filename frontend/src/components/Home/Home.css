@@ -1,0 +1,97 @@
+body {
+  background-color: #f5f5f5; /* Light gray background */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.welcome-title {
+  text-align: center;
+  color: #66b76b; /* Faded red color */
+  margin: 40px 0;
+  font-size: 2.5em;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  transition: transform 0.3s ease; /* Smooth transition for title */
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Space between cards */
+  margin-top: 20px;
+}
+
+.card {
+  width: 250px;
+  min-height: 120px; /* Set a minimum height */
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center text vertically */
+  align-items: center; /* Center text horizontally */
+}
+
+.new-user {
+  background-color: #d0926b; /* Use specified color */
+}
+
+.existing-user {
+  background-color: #52a0c7; /* Use specified color */
+}
+
+.card:hover {
+  transform: rotateY(10deg); /* Rotate card on hover */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover.new-user {
+  background-color: #88d99b; /* Light green on hover */
+}
+
+.card:hover.existing-user {
+  background-color: #b2de6e; /* Light green on hover */
+}
+
+.card h5, .card h6 {
+  color: #fff; /* White text for titles */
+  margin: 0;
+}
+
+.card h6 {
+  margin-top: 5px;
+  font-weight: lighter;
+  font-size: 1.2em;
+}
+
+/* Additional styles for button appearance */
+.card {
+  position: relative;
+}
+
+.card:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.2); /* Light overlay */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.card:hover:before {
+  opacity: 1; /* Show overlay on hover */
+}
+
+/* Hover effect for welcome title */
+.welcome-title:hover {
+  transform: translateY(-5px); /* Move title up on hover */
+}

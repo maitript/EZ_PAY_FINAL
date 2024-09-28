@@ -1,0 +1,119 @@
+.navbar {
+    background-color: #34495E; /* Light gray background */
+    border-bottom: 2px solid #e1e1e1; /* Subtle bottom border */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Slight shadow */
+}
+
+.brand-logo-image {
+    width: 40px; /* Adjust the size as needed */
+    height: 40px; /* Maintain a square for circular shape */
+    border-radius: 50%; /* Make it circular */
+    margin-right: 8px; /* Spacing between logo and text */
+    vertical-align: middle; /* Align with text */
+    transition: transform 0.3s ease; /* Smooth animation for transform */
+}
+
+/* Animation on hover */
+.brand-logo-image:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+
+.user-logo {
+    width: 30px; /* Adjust the size as needed */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Make it circular */
+    margin-right: 5px; /* Spacing between logo and text */
+    vertical-align: middle; /* Align with text */
+}
+
+
+.navbar-brand {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #D1F2EB; 
+    transition: color 0.3s;
+}
+
+.navbar-brand:hover {
+    color: #c0e4dc; 
+}
+/* Animation on hover */
+.brand-logo-container:hover .brand-logo-image {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.brand-logo-container:hover .navbar-brand {
+    transform: translateY(-2px); /* Move the text up on hover */
+}
+
+.navbar-brand {
+    transition: transform 0.3s ease; /* Smooth animation for text */
+}
+
+.nav-link {
+    color: #34495E; /* Primary color */
+    margin-right: 20px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #D1F2EB; /* Secondary color on hover */
+}
+
+.dropdown-toggle {
+    background-color: #D1F2EB; /* Secondary color */
+    border: none;
+    color: #34495E; /* Primary color */
+    transition: background-color 0.3s;
+}
+
+.dropdown-toggle:hover {
+    background-color: #A3D9D2; /* Slightly darker shade on hover */
+}
+
+.dropdown-item {
+    color: #34495E; /* Primary text color */
+    transition: background-color 0.3s;
+}
+
+.dropdown-item:hover {
+    background-color: #D1F2EB; /* Secondary color on hover */
+    color: #34495E; /* Primary text color */
+}
+
+.container-fluid {
+    padding: 0 20px; /* Add some padding */
+}
+
+@media (max-width: 768px) {
+    .nav-link {
+        margin-right: 10px; /* Adjust margin for mobile */
+    }
+}
+
+.dropdown-menu {
+    background-color: #D1F2EB; /* Secondary light background */
+    border: 1px solid #34495E; /* Primary border color */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.dropdown-item {
+    color: #34495E; /* Primary text color */
+    padding: 10px 20px; /* More padding for clickable area */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.dropdown-item:hover {
+    background-color: #34495E; /* Primary color on hover */
+    color: #D1F2EB; /* Secondary text color on hover */
+}
+
+.dropdown-divider {
+    height: 1px;
+    margin: 0.2rem 0;
+    overflow: hidden;
+    background-color: #e1e1e1; /* Light gray for the divider */
+}

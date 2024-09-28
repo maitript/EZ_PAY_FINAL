@@ -209,7 +209,7 @@ const TransactionDashboard = () => {
 
   return (
     <div style={{backgroundColor: '#FFFFFF'}}>
-      <Header/>
+      //<Header/>
       <div style={{ display: 'flex', backgroundColor: '#FFFFFF', justifyContent: 'space-around',}}>
         <FilterCard 
           filters={filters}
